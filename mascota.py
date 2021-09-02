@@ -40,7 +40,7 @@ class Mascota:
     
     def __str__(self):
         # COMPLETAR
-        string = (f"Nombre: {self.nombre}\nSaciedad: {self._saciedad}\nEntretención: {self._entretencion}\nSatisfacción:{self.satisfaccion}")
+        string = (f"Nombre: {self.nombre}\nSaciedad: {self._saciedad}\nEntretención: {self._entretencion}\nSatisfacción: {self.satisfaccion}")
         return string
         pass
 
