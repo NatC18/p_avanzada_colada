@@ -16,11 +16,11 @@ def cargar_mascotas(archivo_mascotas):
     for m in info:
         tipo = m[1]
         if tipo.lower() == "perro":
-            mascota = Perro(m[0], m[2], m[3], m[4], m[5])
+            mascota = Perro(m[0], m[2], m[3], int(m[4]), int(m[5]))
         elif tipo.lower() == "gato":
-            mascota = Gato(m[0], m[2], m[3], m[4], m[5])
+            mascota = Gato(m[0], m[2], m[3], int(m[4]), int(m[5]))
         elif tipo.lower() == "conejo":
-            mascota = Conejo(m[0], m[2], m[3], m[4], m[5])  
+            mascota = Conejo(m[0], m[2], m[3], int(m[4]), int(m[5]))  
 
         mascotas_obj.append(mascota)
 

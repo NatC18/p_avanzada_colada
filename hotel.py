@@ -17,12 +17,12 @@ class Hotel:
         ]
 
     # COMPLETAR
-    def energia(self):
-        pass
+#    def energia(self):
+ #       pass
 
     # COMPLETAR
-    def dias(self):
-        pass
+  #  def dias(self):
+   #     pass
 
     def hotel_en_buen_estado(self):
         """
@@ -43,6 +43,8 @@ class Hotel:
 
     def imprimir_estado(self):
         # COMPLETAR
+        string = (f"Día: {self.__dias}\nEnergía cuidador: {self.__energia}\nMascotas hospedadas:{len(self.mascotas)}")
+        print(string)
         pass
 
     def recibir_mascota(self, mascotas):
@@ -70,19 +72,33 @@ class Hotel:
 
     def nuevo_dia(self):
         # COMPLETAR
+        if self.hotel_en_buen_estado():
+            self.__dias += 1
+            self.__energia = self.max_energia
+            for mascota in self.mascotas:
+                dis_1 = randint(1, 50)
+                dis_2 = randint(1, 50)
+                mascota._entretencion -= dis_1
+                mascota._saciedad -= dis_2
+        else:
+            self.funcionando = False
+            print("La simulación ha terminado y has estado " + str(self.__dias) + " días.")
+
         pass
 
     def revisar_energia(self):
-        if self.energia >= min(p.COSTO_ENERGIA_ALIMENTAR, 
+        if self.__energia >= min(p.COSTO_ENERGIA_ALIMENTAR, 
                                p.COSTO_ENERGIA_PASEAR):
             return True
         return False
 
     def pasear_mascota(self, mascota):
-        self.energia -= p.COSTO_ENERGIA_PASEAR
+        self.__energia -= p.COSTO_ENERGIA_PASEAR
         mascota.pasear()
         print(f'{mascota.nombre} salió a pasear feliz!')
 
     def alimentar_mascota(self, mascota):
         # COMPLETAR
+        self.__energia -= 10
+        mascota.comer(self.comidas[randint(0,2)])
         pass
