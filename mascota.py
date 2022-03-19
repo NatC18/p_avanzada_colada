@@ -14,7 +14,7 @@ class Mascota:
     # COMPLETAR
     #def saciedad(self):
    #     pass
-
+ 
     # COMPLETAR
     #def entretencion(self):
      #   pass
